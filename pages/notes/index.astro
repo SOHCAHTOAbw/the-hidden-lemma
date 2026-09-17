@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const notes=[
+ {date:'17 September 2026',kind:'calculus',title:'Leibniz rule at a moving boundary',href:'/notes/leibniz-rule/',description:'The fundamental theorem supplies the boundary value; the chain rule supplies its velocity.',tags:['calculus','derivatives']},
+ {date:'12 September 2026',kind:'machine learning',title:'Reliable ML begins before the model',href:'/notes/reliable-ml/',description:'Why contracts, lineage, tests, and observability often matter before model selection does.',tags:['mlops','data-quality']},
+ {date:'8 September 2026',kind:'mathematics',title:'Why trigonometric ratios survive scaling',description:'Similar triangles explain why sine, cosine, and tangent depend on angle rather than absolute size.',tags:['geometry','trigonometry']},
+ {date:'3 September 2026',kind:'data engineering',title:'A pipeline is a chain of promises',description:'Each stage makes assumptions about shape, freshness, ownership, and failure; reliability begins by naming them.',tags:['pipelines','contracts']},
+ {date:'29 August 2026',kind:'llms',title:'Evaluate retrieval before blaming generation',description:'A practical way to separate missing evidence, poor ranking, weak prompts, and unsupported model output.',tags:['rag','evaluation']}
+];
+---
+<BaseLayout title="Notes | The Hidden Lemma" description="A working notebook of mathematics, data, ML, MLOps, and LLM ideas."><header class="collection-head"><p class="kicker">Working notebook</p><h1>Notes</h1><p class="lede">Ideas, explanations, code-adjacent observations, and questions worth revisiting.</p></header><section class="entry-list" aria-label="Notes archive">{notes.map(item=><article class="entry"><div class="entry-kind">{item.kind}</div><div class="entry-main"><h2>{item.href?<a href={item.href}>{item.title}</a>:item.title}</h2><p>{item.description}</p><div class="entry-meta"><time>{item.date}</time>{item.tags.map(tag=><span class="tag">{tag}</span>)}</div></div></article>)}</section></BaseLayout>

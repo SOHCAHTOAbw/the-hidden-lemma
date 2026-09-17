@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const experiments=[
+ {kind:'mathematics',title:'Right-triangle explorer',description:'Vary an angle and one side, then watch the remaining sides and trigonometric ratios respond.',status:'building',tags:['trigonometry','interactive']},
+ {kind:'data',title:'CSV field profiler',description:'Inspect columns, missing values, inferred types, and simple distributions without sending the file to a server.',status:'planned',tags:['csv','data-quality']},
+ {kind:'machine learning',title:'Cosine similarity playground',description:'Compare vectors and develop an intuition for the geometry behind embeddings and semantic retrieval.',status:'planned',tags:['vectors','embeddings']},
+ {kind:'mlops',title:'Model release checklist',description:'A compact pre-deployment review covering data contracts, reproducibility, monitoring, rollback, and ownership.',status:'draft',tags:['mlops','reliability']},
+ {kind:'llms',title:'RAG evaluation bench',description:'A small test harness for separating retrieval failures from generation failures in grounded LLM applications.',status:'planned',tags:['rag','evaluation']}
+];
+---
+<BaseLayout title="Lab | The Hidden Lemma" description="Small experiments in mathematics, data, machine learning, and intelligent systems."><header class="collection-head"><p class="kicker">Experiments</p><h1>Lab</h1><p class="lede">Small mathematical and data experiments—made to learn in public, even when the work is unfinished.</p></header><section class="entry-list" aria-label="Lab experiments">{experiments.map(item=><article class="entry"><div class="entry-kind">{item.kind}</div><div class="entry-main"><h2>{item.title}</h2><p>{item.description}</p><div class="entry-meta"><span class="status">{item.status}</span>{item.tags.map(tag=><span class="tag">{tag}</span>)}</div></div></article>)}</section><p class="collection-note">Experiments marked planned or building are intentionally visible: the notebook records process, not only finished results.</p></BaseLayout>
