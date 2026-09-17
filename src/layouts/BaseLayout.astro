@@ -1,0 +1,5 @@
+---
+import '../styles/global.css';
+const {title='The Hidden Lemma',description='Private notes on mathematics, data, and intelligent systems.'}=Astro.props;
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="description" content={description}><link rel="icon" href="/favicon.svg"><link rel="canonical" href={Astro.url}><meta property="og:title" content={title}><meta property="og:description" content={description}><meta property="og:type" content="website"><meta property="og:url" content={Astro.url}><title>{title}</title></head><body><header class="header"><nav class="shell"><a class="brand" href="/">thehidden<span>lemma</span></a><div class="links"><a href="/notes/">notes</a><a href="/mathematicians/">mathematicians</a><a href="/about/">about</a><a href="https://github.com/SOHCAHTOAbw">github</a></div></nav></header><main><div class="shell"><slot /></div></main><footer><div class="shell foot"><span>© 2026 The Hidden Lemma</span><span>Mathematics · data · intelligent systems</span></div></footer></body></html>

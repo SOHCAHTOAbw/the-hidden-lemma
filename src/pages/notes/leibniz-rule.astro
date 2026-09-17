@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Leibniz rule at a moving boundary | The Hidden Lemma"><article class="prose"><p class="meta"><a href="/notes/">notes</a> / calculus · 17 September 2026</p><h1>Leibniz rule at a moving boundary</h1><p>When an integral's boundary depends on <em>x</em>, its derivative measures the integrand at that boundary and multiplies it by the boundary's speed.</p><div class="formula">If F(x) = ∫₀ᵍ⁽ˣ⁾ f(t) dt, then F′(x) = f(g(x)) · g′(x).</div><p>For g(x) = sin(x) and f(t) = 1/(1+t²), we obtain F′(x) = cos(x)/(1 + sin²(x)). At x = π/6, the value is 2√3/5 ≈ 0.69282.</p><blockquote>The fundamental theorem supplies the boundary value; the chain rule supplies its velocity.</blockquote></article></BaseLayout>
